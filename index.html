@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Week 4 Game</title>
+		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
+		<link rel="stylesheet" type="text/javascript" href="javascript/game.js">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">	
+</head>
+<body>
+<div class="jumbotron">
+  <h1 class="display-3">Crystal Collectors!</h1>
+  <p class="lead">You will be given a random number at the start of the game. There are 4 crystals below. Byclicking on the crystal you will add a specific amount of points to your score.</p>
+  <hr class="my-4">
+  <div class="col-md-6">
+  <p>You win the game by matching your total score to the number given in the beginning of the game. The value of each crystal is hidden from you until you click on it. Each time the game starts, the crystals will change values!</p>
+  </div>
+</div>
+<div class="container">
+	<div class="row">	
+		<div class="col-md-4">
+					<div class="panel panel-default">
+		  			<div class="panel-heading">
+		    		<h3 class="panel-title">Try to Reach this Score!</h3>
+		  			</div>
+		  			<div class="panel-body">
+		    		Random Number goes here!
+		  			</div>
+					</div>		
+		</div>
+		<div class="col-md-4">
+					<div class="panel panel-default">
+		  			<div class="panel-heading">
+		    		<h3 class="panel-title">Your Score!</h3>
+		  			</div>
+		  			<div class="panel-body">
+		    		Your Score goes here!
+		  			</div>
+					</div>		
+		</div>
+	</div>
+		<div class="row">	
+			<div class="col-md-1">
+				<img id='blueGem' src="assets/images/Blue_Rupee.png">
+			 </div>
+			<div class="col-md-1">
+				<img id='redGem' src="assets/images/Red_Rupee.png"></div>
+			<div class="col-md-1">
+				<img id='greenRupee' src="assets/images/Green_Rupee.png">
+			</div>
+			<div class="col-md-1">
+				<img id='purpleRupee' src="assets/images/Purple_Rupee.png">
+			</div>
+		</div>
+	
+	<div class="row">
+		<span>Wins: </span>
+		<span>	</span>	
+	</div>
+	<div class="row">
+		<span>Losses: </span>
+		<span>	</span>	
+	</div>
+</div>
+</body>
+</html>

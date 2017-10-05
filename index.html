@@ -36,6 +36,8 @@
 				</div>	
 		</div>
 		<div class="col-md-4">
+<!-- 			<div class='winnerPrompt'>You are a winner></div>
+				<div class='loserPrompt'>You lost :( ></div> -->
 		</div>
 		<div class="col-md-4">
 				<div class="card text-center">
@@ -144,8 +146,10 @@ function generateRandomNumber() {
 	evaluateNumber();
 	});
 //evaluates userScore vs. numberStart
+//I want to keep working on getting the "words" to pop up on the screen
 	function evaluateNumber() {
 		if (userScore === numberStart) {
+			
 			alert("You are a winner!");
 			userWins++;
 			document.getElementById("wins").innerHTML = userWins;

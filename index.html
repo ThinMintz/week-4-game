@@ -36,7 +36,6 @@
 				</div>	
 		</div>
 		<div class="col-md-4">
-			
 		</div>
 		<div class="col-md-4">
 				<div class="card text-center">
@@ -66,11 +65,11 @@
 		</div>
 	
 			<div class="row">
-				<span >Wins: </span>
+				<span >Wins:</span>
 				<span id='wins'>	</span>	
 			</div>
 			<div class="row">
-				<span>Losses: </span>
+				<span>Losses:</span>
 				<span id='losses'>	</span>	
 			</div>
 </div>
@@ -83,6 +82,8 @@
     var crystalGreen;
     var crystalPurple;
     var userScore;
+    var userWins;
+    var userLosses;
 
 //number appears on the screen
 
@@ -105,30 +106,7 @@ function generateRandomNumber() {
 	document.getElementById("losses").innerHTML = userLosses;
 
 //when the crystal is clicked, 
-	/*$("#blueRupee").on("click", function() {
-	userScore+=crystalBlue;
-	document.getElementById("yourScore").innerHTML = userScore;
-	console.log(userScore);
-	});
 
-	$("#redRupee").on("click", function() {
-	userScore+=crystalRed;
-	document.getElementById("yourScore").innerHTML = userScore;
-	console.log(userScore);
-	});
-
-	$("#greenRupee").on("click", function() {
-	userScore+=crystalGreen;
-	document.getElementById("yourScore").innerHTML = userScore;
-	console.log(userScore);
-	});
-
-	$("#purpleRupee").on("click", function() {
-	userScore+=crystalPurple;
-	document.getElementById("yourScore").innerHTML = userScore;
-	console.log(userScore);
-	});
-*/
 //value of the "yourScore" goes up by amount of crystal worth
 
 	function startGame() {
@@ -173,11 +151,13 @@ function generateRandomNumber() {
 	function evaluateNumber() {
 		if (userScore === numberStart) {
 			alert("You are a winner!");
-			//add to win score
+			userWins++;
+			document.getElementById("wins").innerHTML = userWins;
 			startGame();
 		} else if (userScore > numberStart) {
 				alert('You lost!');
-				//add to loss score
+				userLosses++;
+				document.getElementById("losses").innerHTML = userLosses;
 				startGame();
 			}
 		}

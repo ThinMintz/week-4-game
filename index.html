@@ -2,13 +2,16 @@
 <html>
 <head>
 	<title>Week 4 Game</title>
-		<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+		  <meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/javascript" href="assets/javascript/game.js">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css?family=Germania+One" rel="stylesheet">
-		<link rel="stylesheet" type="text/javascript" href="javascript/game.js">
+
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">	
 </head>
 <body>
@@ -23,48 +26,165 @@
 <div class="container">
 	<div class="row">	
 		<div class="col-md-4">
-					<div class="panel panel-default">
-		  			<div class="panel-heading">
-		    		<h3 class="panel-title">Try to Reach this Score!</h3>
-		  			</div>
-		  			<div class="panel-body">
-		    		Random Number goes here!
-		  			</div>
-					</div>		
+				<div class="card text-center">
+  					<div class="card-header">
+    				Try to Reach this Score!
+  					</div>
+  					<div class="card-body">
+    				<h4 class="card-title" id="randomNumber">Random number goes here!</h4>
+      				</div>
+				</div>	
 		</div>
 		<div class="col-md-4">
-					<div class="panel panel-default">
-		  			<div class="panel-heading">
-		    		<h3 class="panel-title">Your Score!</h3>
-		  			</div>
-		  			<div class="panel-body">
-		    		Your Score goes here!
-		  			</div>
-					</div>		
+			
+		</div>
+		<div class="col-md-4">
+				<div class="card text-center">
+  					<div class="card-header">
+    				Your Score!
+  					</div>
+  					<div class="card-body">
+    				<h4 class="card-title" id="yourScore">Random number goes here!</h4>
+      				</div>
+				</div>		
 		</div>
 	</div>
-		<div class="row">	
+		<div class="row">
+			<div class="col-md-4"></div>	
 			<div class="col-md-1">
-				<img id='blueGem' src="assets/images/Blue_Rupee.png">
+				<img id='blueRupee' src="assets/images/Blue_Rupee.png">
 			 </div>
 			<div class="col-md-1">
-				<img id='redGem' src="assets/images/Red_Rupee.png"></div>
+				<img id='redRupee' src="assets/images/Red_Rupee.png"></div>
 			<div class="col-md-1">
 				<img id='greenRupee' src="assets/images/Green_Rupee.png">
 			</div>
 			<div class="col-md-1">
 				<img id='purpleRupee' src="assets/images/Purple_Rupee.png">
 			</div>
+			<div class="col-md-4"></div>	
 		</div>
 	
-	<div class="row">
-		<span>Wins: </span>
-		<span>	</span>	
-	</div>
-	<div class="row">
-		<span>Losses: </span>
-		<span>	</span>	
-	</div>
+			<div class="row">
+				<span >Wins: </span>
+				<span id='wins'>	</span>	
+			</div>
+			<div class="row">
+				<span>Losses: </span>
+				<span id='losses'>	</span>	
+			</div>
 </div>
+
+ <script type="text/javascript">
+//Generate random number at the start of the game
+    var numberStart;
+    var crystalBlue;
+    var crystalRed;
+    var crystalGreen;
+    var crystalPurple;
+    var userScore;
+
+//number appears on the screen
+
+//crystal images are each assigned a random number between 1-12
+
+function generateRandomNumber() {
+	return Math.floor(Math.random()*(12-1+1)+1);
+}
+
+//start game
+	startGame();
+
+
+
+//wins and losses are start at zero
+	var userWins = 0;
+	document.getElementById("wins").innerHTML = userWins;
+
+	var userLosses = 0;
+	document.getElementById("losses").innerHTML = userLosses;
+
+//when the crystal is clicked, 
+	/*$("#blueRupee").on("click", function() {
+	userScore+=crystalBlue;
+	document.getElementById("yourScore").innerHTML = userScore;
+	console.log(userScore);
+	});
+
+	$("#redRupee").on("click", function() {
+	userScore+=crystalRed;
+	document.getElementById("yourScore").innerHTML = userScore;
+	console.log(userScore);
+	});
+
+	$("#greenRupee").on("click", function() {
+	userScore+=crystalGreen;
+	document.getElementById("yourScore").innerHTML = userScore;
+	console.log(userScore);
+	});
+
+	$("#purpleRupee").on("click", function() {
+	userScore+=crystalPurple;
+	document.getElementById("yourScore").innerHTML = userScore;
+	console.log(userScore);
+	});
+*/
+//value of the "yourScore" goes up by amount of crystal worth
+
+	function startGame() {
+		crystalRed = generateRandomNumber();
+	 	crystalBlue = generateRandomNumber();
+	 	crystalPurple = generateRandomNumber();
+	 	crystalGreen = generateRandomNumber();
+	 	numberStart = Math.floor(Math.random()*(120-19+1)+19);
+	 	document.getElementById("randomNumber").innerHTML = numberStart;
+	 	userScore = 0;
+	 	document.getElementById("yourScore").innerHTML = userScore;
+	}
+
+	$("#blueRupee").on("click", function() {
+	userScore+=crystalBlue;
+	document.getElementById("yourScore").innerHTML = userScore;
+	evaluateNumber();
+	console.log(userScore);
+	});
+
+	$("#redRupee").on("click", function() {
+	userScore+=crystalRed;
+	document.getElementById("yourScore").innerHTML = userScore;
+	evaluateNumber();
+	console.log(userScore);
+	});
+
+	$("#greenRupee").on("click", function() {
+	userScore+=crystalGreen;
+	document.getElementById("yourScore").innerHTML = userScore;
+	evaluateNumber();
+	console.log(userScore);
+	});
+
+	$("#purpleRupee").on("click", function() {
+	userScore+=crystalPurple;
+	document.getElementById("yourScore").innerHTML = userScore;
+	evaluateNumber();
+	console.log(userScore);
+	});
+
+	function evaluateNumber() {
+		if (userScore === numberStart) {
+			alert("You are a winner!");
+			//add to win score
+			startGame();
+		} else if (userScore > numberStart) {
+				alert('You lost!');
+				//add to loss score
+				startGame();
+			}
+		}
+
+	
+
+</script>
+
 </body>
 </html>

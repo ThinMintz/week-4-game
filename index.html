@@ -124,30 +124,26 @@ function generateRandomNumber() {
 	userScore+=crystalBlue;
 	document.getElementById("yourScore").innerHTML = userScore;
 	evaluateNumber();
-	console.log(userScore);
 	});
 
 	$("#redRupee").on("click", function() {
 	userScore+=crystalRed;
 	document.getElementById("yourScore").innerHTML = userScore;
 	evaluateNumber();
-	console.log(userScore);
 	});
 
 	$("#greenRupee").on("click", function() {
 	userScore+=crystalGreen;
 	document.getElementById("yourScore").innerHTML = userScore;
 	evaluateNumber();
-	console.log(userScore);
 	});
 
 	$("#purpleRupee").on("click", function() {
 	userScore+=crystalPurple;
 	document.getElementById("yourScore").innerHTML = userScore;
 	evaluateNumber();
-	console.log(userScore);
 	});
-
+//evaluates userScore vs. numberStart
 	function evaluateNumber() {
 		if (userScore === numberStart) {
 			alert("You are a winner!");
